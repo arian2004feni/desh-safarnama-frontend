@@ -45,12 +45,25 @@ const guides = [
       linkedin: "#",
     },
   },
+  {
+    id: 2,
+    name: "Faraz Khan",
+    region: "Cox’s Bazar",
+    specialties: "Beach & Marine Tours",
+    image: "https://i.ibb.co.com/B50dzmDT/item2.jpg",
+    socials: {
+      facebook: "#",
+      instagram: "#",
+      twitter: "#",
+      linkedin: "#",
+    },
+  },
 ];
 
 const OurTeam = () => {
   return (
     <section className="wrapper py-20">
-      <div className="mb-12 text-center">
+      <div className="mb-12">
         <h2 className="font-bold mb-2">Tour Guides</h2>
         <h2 className="text-5xl font-heading font-bold mb-4">
           Meet Our Guides
@@ -61,11 +74,11 @@ const OurTeam = () => {
         </p>
       </div>
 
-      <div className="lg:grid lg:grid-cols-3 flex flex-wrap justify-center lg:max-w-5xl mx-auto gap-8">
+      <div className="lg:grid lg:grid-cols-4 flex flex-wrap justify-center xl:gap-8 lg:gap-2 gap-8">
         {guides.map((guide) => (
           <div
             key={guide.id}
-            className="group rounded-box relative md:w-80 sm:w-[272px] w-80 bg-base-100 shadow-xl overflow-hidden"
+            className="group rounded-box relative md:w-80 sm:w-[272px] lg:w-auto w-80 bg-base-100 shadow-xl overflow-hidden"
           >
             <figure className="pb-24">
               <img
