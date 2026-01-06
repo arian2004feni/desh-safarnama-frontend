@@ -7,35 +7,59 @@
   default: true;
   prefersdark: true;
   color-scheme: "light";
-  --color-base-100: oklch(99% 0.005 100);
-  --color-base-200: oklch(97% 0.01 100);
-  --color-base-300: oklch(94% 0.015 100);
-  --color-base-content: oklch(25% 0.02 260);
-  --color-primary: oklch(70% 0.17 150);
-  --color-primary-content: oklch(99% 0.02 120);
-  --color-secondary: oklch(85% 0.12 75);
-  --color-secondary-content: oklch(20% 0.03 70);
-  --color-accent: oklch(75% 0.16 230);
-  --color-accent-content: oklch(99% 0.02 220);
-  --color-neutral: oklch(35% 0.03 250);
-  --color-neutral-content: oklch(97% 0.01 250);
-  --color-info: oklch(75% 0.14 250);
-  --color-info-content: oklch(98% 0.02 230);
-  --color-success: oklch(72% 0.18 150);
-  --color-success-content: oklch(99% 0.02 120);
-  --color-warning: oklch(80% 0.18 85);
-  --color-warning-content: oklch(25% 0.02 85);
-  --color-error: oklch(65% 0.2 30);
-  --color-error-content: oklch(99% 0.02 25);
-  --radius-selector: 2rem;
-  --radius-field: 0.5rem;
-  --radius-box: 1rem;
+
+  /* 🌤 Base Backgrounds */
+  --color-base-100: oklch(98% 0.01 90);   /* #F7F5EF */
+  --color-base-200: oklch(96% 0.01 90);
+  --color-base-300: oklch(93% 0.015 90);
+
+  /* 🖤 Text */
+  --color-base-content: oklch(23% 0.02 260); /* #1F2933 */
+
+  /* 🌿 Primary – Deep Bengal Green */
+  --color-primary: oklch(38% 0.13 155);      /* #1B5E3A */
+  --color-primary-content: oklch(95% 0.02 90);
+
+  /* 🔴 Secondary – Flag Red (CTA / highlights) */
+  --color-secondary: oklch(45% 0.18 25);     /* #C62828 */
+  --color-secondary-content: oklch(96% 0.01 90);
+
+  /* 🌊 Accent – River Blue */
+  --color-accent: oklch(55% 0.14 225);       /* #2E86AB */
+  --color-accent-content: oklch(96% 0.01 90);
+
+  /* 🪵 Neutral – Charcoal / UI anchors */
+  --color-neutral: oklch(22% 0.02 260);
+  --color-neutral-content: oklch(95% 0.01 90);
+
+  /* ℹ️ Info – Travel tips / maps */
+  --color-info: oklch(60% 0.12 225);
+  --color-info-content: oklch(22% 0.02 260);
+
+  /* ✅ Success – Booking confirmed */
+  --color-success: oklch(52% 0.13 155);
+  --color-success-content: oklch(96% 0.01 90);
+
+  /* ⚠️ Warning – Alerts */
+  --color-warning: oklch(72% 0.14 85);
+  --color-warning-content: oklch(26% 0.05 70);
+
+  /* ❌ Error – Critical actions */
+  --color-error: oklch(48% 0.18 25);
+  --color-error-content: oklch(96% 0.01 90);
+
+  /* 🧩 UI Shape */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.375rem;
+  --radius-box: 0.75rem;
+
   --size-selector: 0.25rem;
   --size-field: 0.25rem;
   --border: 1px;
   --depth: 1;
   --noise: 0;
 }
+
 
 /* Font: Poppins + Inter + Playfair Display */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
