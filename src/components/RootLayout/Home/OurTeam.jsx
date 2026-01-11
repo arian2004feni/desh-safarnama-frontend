@@ -46,7 +46,7 @@ const guides = [
     },
   },
   {
-    id: 2,
+    id: 4,
     name: "Faraz Khan",
     region: "Cox’s Bazar",
     specialties: "Beach & Marine Tours",
