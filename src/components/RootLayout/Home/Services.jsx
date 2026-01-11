@@ -45,19 +45,20 @@ const Services = () => {
           {servicesContent.map((service) => {
             const { icon: Icon } = service;
             return (
-              <>
-                <div key={service.id} className="max-lg:py-6 md:px-2 p-6 flex md:flex-col gap-5">
-                  <div className="max-md:my-auto">
-                    <Icon className="text-primary text-5xl"/>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-3">
-                    {service.title}
-                    </h3>
-                    <p className="text-gray-500">{service.description}</p>
-                  </div>
+              <div
+                key={service.id}
+                className="max-lg:py-6 md:px-2 p-6 flex md:flex-col gap-5"
+              >
+                <div className="max-md:my-auto">
+                  <Icon className="text-primary text-5xl" />
                 </div>
-              </>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-500">{service.description}</p>
+                </div>
+              </div>
             );
           })}
         </div>
