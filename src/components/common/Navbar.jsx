@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router";
+import AuthNavs from "../AuthNavs";
 
 const Navbar = () => {
   const navs = (
@@ -45,13 +46,7 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navs}</ul>
       </div>
-      <div className="navbar-end">
-      <button
-        className="btn"
-      >
-        Login
-      </button>
-    </div>
+      <AuthNavs />
     </nav>
   );
 };

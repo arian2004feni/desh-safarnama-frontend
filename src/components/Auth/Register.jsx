@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { LuUser } from "react-icons/lu";
 import { PiRepeat } from "react-icons/pi";
 import useAuth from "../../hooks/useAuth";
+import { Link, useNavigate } from "react-router";
 
 const Register = () => {
   const {
@@ -14,7 +15,9 @@ const Register = () => {
     watch,
     formState: { errors },
   } = useForm();
+
   const { createUser, profileSetup } = useAuth();
+  const navigate = useNavigate();
 
   const passwordValue = watch("password");
   const repeatPasswordValue = watch("repeatPassword");
@@ -27,13 +30,15 @@ const Register = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    alert(JSON.stringify(data));
+
     createUser(data.email, data.password)
-      .then((result) => {
-        console.log("User registered:", result);
+      .then(() => {
+        // console.log("User registered:", result);
+
         profileSetup({ displayName: data.username })
           .then(() => {
-            console.log("success: name update");
+            // console.log("success: name update");
+            navigate("/");
           })
           .catch((err) => {
             console.log("err in profileUpdate", err);
@@ -46,7 +51,7 @@ const Register = () => {
 
   return (
     <>
-      <h1 className="text-4xl font-heading font-semibold">Wellcome </h1>
+      <h1 className="text-4xl font-heading font-semibold">Register</h1>
       <p className="opacity-60 mb-5 mt-2 text-sm">
         Please enter your details here{" "}
       </p>
@@ -160,7 +165,7 @@ const Register = () => {
             )}
           </div>
 
-          <div className="">
+          <div className="mb-3">
             <label className="label" htmlFor="repeatPassword">
               Repeat Password
             </label>
@@ -210,6 +215,7 @@ const Register = () => {
           </button>
         </fieldset>
       </form>
+      <p className="mt-3 text-center text-sm">Already have an account? <Link to="/auth/login" className="link text-info">Login</Link></p>
     </>
   );
 };
