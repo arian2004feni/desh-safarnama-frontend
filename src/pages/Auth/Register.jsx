@@ -5,6 +5,7 @@ import { BiHide, BiShow } from "react-icons/bi";
 import { useForm } from "react-hook-form";
 import { LuUser } from "react-icons/lu";
 import { PiRepeat } from "react-icons/pi";
+import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
   const {
@@ -13,6 +14,7 @@ const Register = () => {
     watch,
     formState: { errors },
   } = useForm();
+  const { createUser, profileSetup } = useAuth();
 
   const passwordValue = watch("password");
   const repeatPasswordValue = watch("repeatPassword");
@@ -26,12 +28,28 @@ const Register = () => {
   const onSubmit = (data) => {
     console.log(data);
     alert(JSON.stringify(data));
+    createUser(data.email, data.password)
+      .then((result) => {
+        console.log("User registered:", result);
+        profileSetup({ displayName: data.username })
+          .then(() => {
+            console.log("success: name update");
+          })
+          .catch((err) => {
+            console.log("err in profileUpdate", err);
+          });
+      })
+      .catch((error) => {
+        console.error("Error during registration:", error);
+      });
   };
 
   return (
     <>
-    <h1 className="text-4xl font-heading font-semibold">Wellcome </h1>
-    <p className="opacity-60 mb-5 mt-2 text-sm">Please enter your details here </p>
+      <h1 className="text-4xl font-heading font-semibold">Wellcome </h1>
+      <p className="opacity-60 mb-5 mt-2 text-sm">
+        Please enter your details here{" "}
+      </p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset className="fieldset">
           <div className="mb-3">
